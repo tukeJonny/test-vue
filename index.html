@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+		<title> test Vue.js </title>
+	</head>
+
+	<body>
+		<div id="app">
+			{{ message }}
+		</div>
+
+		<div id="app-2">
+		<!-- BootstrapとかElement UIとかのclass指定をv-bindで動的に切り替えたりする --!>:
+			<input type="text" v-bind:value="message">
+		</div>
+		<!-- bindする{{ }}が読み込まれてからでないと埋め込めないため、ここに書く !-->
+
+		<div id="app-3">
+			<!-- seenが定義されていたら表示される !-->
+			<p v-if="seen">Now you see me</p>
+		</div>
+
+		<div id="app-4">
+			<ol> <!-- 連番をつける !-->
+				<!-- todosをいてレート !-->:
+				<li v-for="todo in todos">
+					{{ todo.text }}
+				</li>
+			</ol>
+		</div>:
+
+		<div id="app-5">
+			<p>{{ message }}</p>
+			<button v-on:click="reverseMessage"> Reverse Message </button>
+		</div>
+
+		<div id="app-6">
+			<p>{{ message }}</p>
+			<input v-model="message">
+		</div>
+
+		<ol>
+			<todo-item></todo-item>
+		</ol>
+
+		<!--
+		<div id="app-7">
+			<ol>
+				<todo-item v-for="item in groceryList" v-bind:todo="item"></todo-item>
+			</ol>
+		</div>
+		!-->
+
+
+
+
+
+
+		<script src="./js/myvue.js"></script>
+	</body>
+</html>
